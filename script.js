@@ -1,3 +1,4 @@
+let counter = 0;
 function newItem(){
 
   //javascript
@@ -6,12 +7,31 @@ function newItem(){
     let inputValue = $("input").val();
     li.append(inputValue);
     
-    if(inputValue === '') {
-      alert("input something");
+    if(inputValue === '' && counter === 0) {
+      alert("Please write something!");
+      counter++;
+    }
+    else if(inputValue === '' && counter === 1) {
+      alert("I would really appreciate it if you would fill in the input box!!");
+      counter++;
+    }
+    else if(inputValue === '' && counter === 2) {
+      alert("Put something in the box... please!");
+      counter++;
+    }
+    else if(inputValue === '' && counter === 3) {
+      alert("Now your just pissing me off");
+      counter++;
+    }
+    else if(inputValue === '' && counter === 4) {
+      alert("No inputs for you!!!");
+      $(".container").addClass("no-inputs-for-you")
     }
     else {
-      let list = $("#list")
-      list.append(li)
+      let list = $("#list");
+      list.append(li);
+      $("input").val('');
+      counter = 0;
     }
   
    //2. Crossing out an item from the list of items:
@@ -29,7 +49,7 @@ function newItem(){
      crossOutButton.on("click", deleteListItem);
    //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
      function deleteListItem(){
-       li.addClass("delete")
+       li.remove();
      }
    // 4. Reordering the items: 
      $('#list').sortable();
