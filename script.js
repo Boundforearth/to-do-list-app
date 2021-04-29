@@ -12,7 +12,6 @@ function newItem(){
     else {
       let list = $("#list")
       list.append(li)
-      
     }
   
    //2. Crossing out an item from the list of items:
@@ -23,11 +22,11 @@ function newItem(){
      li.on("dblclick",crossOut);
   
    //3(i). Adding the delete button "X": 
-    let crossOutButton = $("button");
-    crossOutButton.append($("X"))
+    let crossOutButton = $("<crossOutButton></crossOutButton>");
+    crossOutButton.append("X");
      li.append(crossOutButton);
   
-     crossOutButton.addEventListener("click", deleteListItem);
+     crossOutButton.on("click", deleteListItem);
    //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
      function deleteListItem(){
        li.addClass("delete")
@@ -36,3 +35,4 @@ function newItem(){
      $('#list').sortable();
   
   }
+  
