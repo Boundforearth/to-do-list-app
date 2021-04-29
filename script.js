@@ -20,7 +20,7 @@ function newItem(){
       counter++;
     }
     else if(inputValue === '' && counter === 3) {
-      alert("Now your just pissing me off");
+      alert("Now you're just pissing me off");
       counter++;
     }
     else if(inputValue === '' && counter === 4) {
